@@ -16,9 +16,7 @@
 %%% API
 %%%===================================================================
 
-
-start_link() ->
-    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+start_link() -> gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
 
 %%%===================================================================
@@ -31,26 +29,15 @@ init([]) ->
     timer:send_interval(1000, update_date),
     {ok, #state{}}.
 
-handle_call(_, _From, State) ->
-    {reply, ok, State}.
+handle_call(_, _From, State) -> {reply, ok, State}.
 
-handle_cast(_, State) ->
-    {noreply, State}.
-
+handle_cast(_, State) -> {noreply, State}.
 
 handle_info(update_date, State) ->
     Date = list_to_binary(httpd_util:rfc1123_date()),
     ets:insert(elli_date, {rfc1123, Date}),
     {noreply, State}.
 
+terminate(_Reason, _State) -> ok.
 
-terminate(_Reason, _State) ->
-    ok.
-
-code_change(_OldVsn, State, _Extra) ->
-    {ok, State}.
-
-%%%===================================================================
-%%% Internal functions
-%%%===================================================================
-
+code_change(_OldVsn, State, _Extra) -> {ok, State}.
