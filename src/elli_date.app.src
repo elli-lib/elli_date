@@ -1,11 +1,13 @@
-{application, elli_date,
- [
-  {description, "Elli middleware adding the Date header"},
-  {vsn, "1.1"},
-  {registered, []},
-  {applications, [
-                  kernel,
-                  stdlib
-                 ]},
-  {env, []}
+{application, elli_date, [
+  {description,  "Elli middleware adding the Date header."},
+  {vsn,          "1.1.0"},
+  {registered,   []},
+  {applications, [kernel, stdlib]},
+  {env,          []},
+
+  {maintainers,  ["Eric Bailey"]},
+  {licenses,     ["MIT"]},
+  {links, [
+    {"GitHub", "https://github.com/elli-lib/elli_date"}
+  ]}
  ]}.

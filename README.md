@@ -1,9 +1,11 @@
-# HTTP "Date" header for elli
+# elli_date
 
 [![Build Status][Travis badge]][Travis link]
 
 [Travis badge]: https://travis-ci.org/elli-lib/elli_date.svg?branch=master
 [Travis link]: https://travis-ci.org/elli-lib/elli_date
+
+*Elli middleware adding the Date header.*
 
 This Elli middleware adds the "Date" header to responses. The current
 date string is cached in an ETS-table and updated once a second. The
