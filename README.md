@@ -1,9 +1,12 @@
 # elli_date
 
 [![Build Status][Travis badge]][Travis link]
+[![Hex Badge][Hex badge]][Hex link]
 
 [Travis badge]: https://travis-ci.org/elli-lib/elli_date.svg?branch=master
 [Travis link]: https://travis-ci.org/elli-lib/elli_date
+[Hex badge]: https://img.shields.io/hexpm/v/elli_date.svg
+[Hex link]: https://hex.pm/packages/elli_date
 
 *Elli middleware adding the Date header.*
 
