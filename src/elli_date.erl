@@ -29,15 +29,9 @@ postprocess(Req, {ResponseCode, Body}, Config)
     postprocess(Req, {ResponseCode, [], Body}, Config);
 postprocess(_Req, {ResponseCode, Headers, Body}, _Args)
   when is_integer(ResponseCode) orelse ResponseCode =:= ok ->
-    {ResponseCode, [{<<"Date">>, rfc1123()} | Headers], Body};
+    {ResponseCode, [{<<"Date">>, elli_date_server:rfc1123()} | Headers], Body};
 postprocess(_, Res, _) -> Res.
 
 %%%===================================================================
 %%% Internal functions
 %%%===================================================================
-
-rfc1123() ->
-    case ets:lookup(elli_date, rfc1123) of
-        [{rfc1123, Date}] -> Date;
-        []                -> <<"">>
-    end.
