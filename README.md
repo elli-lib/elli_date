@@ -16,3 +16,24 @@ impact on performance is very low, if noticeable at all.
 
 According to the HTTP 1.1 specification, the "Date" header in each
 response is required.
+
+## Usage
+
+To use `elli_date`, just add it to your `mods` in your [`elli_middleware`][]
+`Config`.
+
+```erlang
+Config = [
+          {mods, [
+                  {elli_date, []},
+                  %% ...,
+                 ]}
+         ],
+elli:start_link([
+                 %% ...,
+                 {callback, elli_middleware},
+                 {callback_args, Config}
+                ]).
+```
+
+[`elli_middleware`]: https://github.com/elli-lib/elli/blob/develop/doc/elli_middleware.md
