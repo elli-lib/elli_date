@@ -25,8 +25,8 @@ To use `elli_date`, just add it to your `mods` in your [`elli_middleware`][]
 ```erlang
 Config = [
           {mods, [
-                  {elli_date, []},
                   %% ...,
+                  {elli_date, []}
                  ]}
          ],
 elli:start_link([
